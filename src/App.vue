@@ -1,13 +1,20 @@
 <template>
-  <HelloWorld />
+  <customHeader />
+  <customMain />
+  <customFooter />
 </template>
 
 <script>
-import HelloWorldVue from "./components/HelloWorld.vue";
+import CustomFooterVue from "./components/CustomFooter.vue";
+import CustomHeaderVue from "./components/CustomHeader.vue";
+import CustomMainVue from "./components/CustomMain.vue";
+
 export default {
   name: "App",
   components: {
-    HelloWorld: HelloWorldVue,
+    customFooter: CustomFooterVue,
+    customHeader: CustomHeaderVue,
+    customMain: CustomMainVue,
   },
 };
 </script>
