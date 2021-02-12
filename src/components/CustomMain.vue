@@ -1,14 +1,14 @@
 <template>
   <main>
     <div id="list-items-wrapper">
-      <customInput :todos="todos" @to-add="add" />
+      <customInput :todos="todos" @add="add" />
       <customStats :todos="todos" />
       <customItem
         v-for="todo in todos"
         :key="todo"
         :todo="todo"
         :todos="todos"
-        @to-remove="remove"
+        @remove="remove"
       />
     </div>
   </main>
