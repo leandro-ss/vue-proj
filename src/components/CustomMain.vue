@@ -1,13 +1,14 @@
 <template>
   <main>
     <div id="list-items-wrapper">
-      <customInput :todos="todos" />
+      <customInput :todos="todos" @to-add="add" />
       <customStats :todos="todos" />
       <customItem
         v-for="todo in todos"
         :key="todo"
         :todo="todo"
         :todos="todos"
+        @to-remove="remove"
       />
     </div>
   </main>
@@ -24,6 +25,15 @@ export default {
     return {
       todos: ["Alfa", "Bravo", "Charlie", "Delta", "Echo"],
     };
+  },
+  methods: {
+    remove(value) {
+      let trashedItemIndex = this.todos.indexOf(value);
+      this.todos.splice(trashedItemIndex, 1);
+    },
+    add(value) {
+      this.todos.push(value);
+    },
   },
   components: {
     customItem: CustomItemVue,
