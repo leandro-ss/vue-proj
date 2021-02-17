@@ -19,7 +19,7 @@ export default {
   methods: {
     addTodoItem: function () {
       if (this.userInput !== "") {
-        this.$emit("add", this.userInput);
+        this.todos.push(this.userInput);
         this.userInput = "";
       }
     },
