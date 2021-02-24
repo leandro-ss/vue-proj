@@ -1,21 +1,13 @@
 <template>
-  <customHeader />
-  <customMain />
-  <customFooter />
+  <div id="nav">
+    <router-link to="/">Home</router-link>
+  </div>
+  <router-view id="app" />
 </template>
 
 <script>
-import CustomFooterVue from "./components/CustomFooter.vue";
-import CustomHeaderVue from "./components/CustomHeader.vue";
-import CustomMainVue from "./components/CustomMain.vue";
-
 export default {
-  name: "App",
-  components: {
-    customFooter: CustomFooterVue,
-    customHeader: CustomHeaderVue,
-    customMain: CustomMainVue,
-  },
+  name: "Home",
 };
 </script>
 
