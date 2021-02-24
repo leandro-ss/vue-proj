@@ -29,8 +29,7 @@ export default {
   },
   methods: {
     removeItem: function (todo) {
-      let trashedItemIndex = this.todos.indexOf(todo);
-      this.todos.splice(trashedItemIndex, 1);
+      this.$emit("remove", todo);
     },
   },
   props: {
