@@ -1,15 +1,12 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link>
+    <span/>
+    <router-link to="/about">About</router-link>
   </div>
   <router-view id="app" />
 </template>
 
-<script>
-export default {
-  name: "Home",
-};
-</script>
 
 <style>
 #app {
