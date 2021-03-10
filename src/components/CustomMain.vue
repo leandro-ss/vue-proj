@@ -7,7 +7,7 @@
         v-for="todo in todos"
         :key="todo"
         :todo="todo"
-        :todos="todos"
+        @toggleCheckItem="toggleCheckItem"
         @remove="remove"
       />
     </div>
@@ -23,15 +23,26 @@ export default {
   name: "CustomMain",
   data: function () {
     return {
-      todos: ["Alfa", "Bravo", "Charlie", "Delta", "Echo"],
+      todos: [{title: 'Alfa', checked: false},
+        {title: 'Bravo', checked: false},
+        {title: 'Charlie', checked: false},
+        {title: 'Delta', checked: false},
+        {title: 'Echo', checked: false},
+        {title: 'Foxtrot', checked: true},
+      ],
     };
   },
-  remove(value) {
-    let trashedItemIndex = this.todos.indexOf(value);
-    this.todos.splice(trashedItemIndex, 1);
-  },
-  add(value) {
-    this.todos.push(value);
+  methods: {
+    remove(value) {
+      let trashedItemIndex = this.todos.indexOf(value);
+      this.todos.splice(trashedItemIndex, 1);
+    },
+    add(value) {
+      this.todos.push(value);
+    },
+    toggleCheckItem(value) {
+      value.checked = !value.checked;
+    }
   },
   components: {
     customItem: CustomItemVue,

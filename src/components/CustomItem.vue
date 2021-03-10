@@ -1,15 +1,15 @@
 <template>
   <section class="item">
-    <div id="checkbox" @click="isChecked = !isChecked">
-      <div v-if="!isChecked" class="circle-svg svg-wrapper">
+    <div id="checkbox" @click="toggleCheckItem(todo)">
+      <div v-if="!todo.checked" class="circle-svg svg-wrapper">
         <svgUnchecked />
       </div>
-      <div v-if="isChecked" class="check-circle-svg svg-wrapper">
+      <div v-if="todo.checked" class="check-circle-svg svg-wrapper">
         <svgChecked />
       </div>
     </div>
     <div id="item">
-      <p>{{ todo }}</p>
+      <p>{{ todo.title }}</p>
     </div>
     <div class="trash-svg svg-wrapper" @click="removeItem(todo)">
       <svgTrash />
@@ -28,13 +28,15 @@ export default {
     return { isChecked: false };
   },
   methods: {
+    toggleCheckItem: function (todo) {
+      this.$emit('toggleCheckItem', todo);
+    }, 
     removeItem: function (todo) {
       this.$emit("remove", todo);
     },
   },
   props: {
-    todo: String,
-    todos: Array,
+    todo: Object
   },
   components: {
     svgChecked: SvgCheckedVue,
