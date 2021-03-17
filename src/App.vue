@@ -2,6 +2,8 @@
   <div id="nav">
     <router-link to="/">Home</router-link>
     <span/>&nbsp;
+    <router-link to="/timeline">Timeline</router-link>
+    <span/>&nbsp;
     <router-link to="/about">About</router-link>
   </div>
   <router-view/>

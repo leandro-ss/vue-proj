@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <customHeader />
+    <customHeader title="VueJS About" />
 
     <ul>
       <li>

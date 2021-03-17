@@ -1,10 +1,10 @@
 <template>
   <section class="item">
     <div id="checkbox" @click="toggleCheckItem(todo)">
-      <div v-if="!todo.checked" class="circle-svg svg-wrapper">
+      <div v-if="!todo.completed" class="circle-svg svg-wrapper">
         <svgUnchecked />
       </div>
-      <div v-if="todo.checked" class="check-circle-svg svg-wrapper">
+      <div v-if="todo.completed" class="check-circle-svg svg-wrapper">
         <svgChecked />
       </div>
     </div>

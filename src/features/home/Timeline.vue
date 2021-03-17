@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <customHeader title="VueJS Checklist" />
+    <customHeader title="VueJS Timeline" />
     <customMain />
     <customFooter />
   </div>

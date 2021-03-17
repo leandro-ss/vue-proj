@@ -23,25 +23,24 @@ export default {
   name: "CustomMain",
   data: function () {
     return {
-      todos: [{title: 'Alfa', checked: false},
-        {title: 'Bravo', checked: false},
-        {title: 'Charlie', checked: false},
-        {title: 'Delta', checked: false},
-        {title: 'Echo', checked: false},
-        {title: 'Foxtrot', checked: true},
-      ],
+      todos: [],
     };
+  },
+  created: function () {
+    // Simple GET request using fetch
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then(response => response.json())
+      .then(data => (this.todos = data));
   },
   methods: {
     remove(value) {
-      let trashedItemIndex = this.todos.indexOf(value);
-      this.todos.splice(trashedItemIndex, 1);
+      this.todos = this.todos.filter(todo => todo !== value);
     },
     add(value) {
-      this.todos.push(value);
+      this.todos.push({title:value});
     },
     toggleCheckItem(value) {
-      value.checked = !value.checked;
+      value.completed = !value.completed;
     }
   },
   components: {

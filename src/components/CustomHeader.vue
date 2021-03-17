@@ -1,12 +1,15 @@
 <template>
   <header>
-    <h1>VueJS Checklist</h1>
+    <h1>{{ title }}</h1>
   </header>
 </template>
 
 <script>
 export default {
   name: "CustomHeader",
+  props: {
+    title: String
+  },
 };
 </script>
 
